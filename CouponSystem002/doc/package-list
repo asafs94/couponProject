@@ -1,0 +1,9 @@
+TESTING
+dao.DB
+dao.interfaces
+databaseConnections
+elements
+exceptions
+facades
+system.mainSystem
+threads
