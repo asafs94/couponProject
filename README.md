@@ -9,7 +9,7 @@ Made out of two layers:
  
  ### MAIN LAYERS:
 
-##### COUPON SYSTEM
+#### COUPON SYSTEM
 
 3 main users :  ADMIN, COMPANY, CUSTOMER.
     A. ADMIN : Can add, update, delete and see all the info of companies and customers.
@@ -25,7 +25,7 @@ Made out of two layers:
 
 **COUPON SYSTEM** - The main object through which you may connect to the system. 
 
-##### COUPLUX 
+#### COUPLUX 
   
   The name of the coupon web app. 
   Includes a **Tomcat** server infrastracture, **Jersey Web Services**, Filters and a UI Design based on **Angular 5**.
