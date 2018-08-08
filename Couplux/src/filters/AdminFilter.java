@@ -48,20 +48,33 @@ public class AdminFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+		//For Debug purposes:
 		System.out.println("************ ADMIN FILTER ************");
-
-		HttpServletRequest req = (HttpServletRequest) request; // TODO: move to filter's attributes.
+		
+		//Getting request and response as HttpServlet Objects:
+		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		// ^^There was already a filter for checking there is a session and login data.
+		
+		// This filter can only be reached after the request has passed the loggin and session facade.
+		// Therefore, there is already a session and the logged in status of the user is verified.
+		// Getting session:
 		HttpSession session = req.getSession(false);
+		//Getting facade from the session:
 		CouponClientFacade facade = (CouponClientFacade) session.getAttribute("facade");
+		//Checking if its an admin:
 		if (facade instanceof AdminFacade) {
+			//For debug purposes:
 			System.out.println("Admin Filter: Request went through Admin Filter Succesfully");
+			//Passes the request along if its an admin:
 			chain.doFilter(request, response);
 		} else {
-			// if not an Admin => return to home page.
-			System.out.println("Admin Filter: Request did not pass through Admin Filter");
-			System.out.println("Admin Filter: Redirecting...");
+			System.out.println("Admin Filter: Request did not pass through Admin Filter");  //DEBUG
+			System.out.println("Admin Filter: Redirecting..."); //DEBUG
+			// if not an Admin => redirect to a Service which returns an errorResponse accordingly:
+			/*
+			This was made as a part of a temporary fix for a course project.
+			the correct thing to do would have been to use a Jersey Filter and this problem would have not existed.
+			*/
 			String url = "/Couplux/Services/FilterResponse/Forbidden";
 			resp.sendRedirect(resp.encodeRedirectURL(url));
 		}
@@ -71,7 +84,7 @@ public class AdminFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
+		
 	}
 
 }
