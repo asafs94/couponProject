@@ -10,19 +10,23 @@ import tools.Message;
 import tools.MessageType;
 
 
-//TODO: make message coloring number 1,2,3 -> green, orange, red 
+
 @Provider
 public class ExceptionsHandler implements ExceptionMapper<ApplicationException> {
 
 	@Override
 	public Response toResponse(ApplicationException e) {
-		System.out.println("Error:------------> "+ e.getErrorType().toString());
+		System.out.println("Error:------------> "+ e.getErrorType().toString()); // A note to the server console, will be deleted in production.
+		//Getting Enum ErrorType:
 		ErrorType error = e.getErrorType();
+		//Editing Generic Message:
 		Message message=new Message("System Error", "Please try again later.",MessageType.ERROR);
+		//Editing Generic Status:
 		Status status=Status.SERVICE_UNAVAILABLE;
-
+		
+		//Checking ErrorType:
 		switch (error) {
-
+		
 		case GENERIC_SYSTEM_ERROR: {
 			message = new Message("System Error", "Oh oh.. Something went wrong, please try again later...",MessageType.ERROR);
 			e.printStackTrace();
