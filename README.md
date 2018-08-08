@@ -19,11 +19,9 @@ Made out of two layers:
 *Works with Apache Derby Database.
 
 ##### 3 Main Levels:
-**DAO** - The basic level that synchronizes with the database.
-
-**FACADES** - The level that contains the buisness logic of the system.
-
-**COUPON SYSTEM** - The main object through which you may connect to the system. 
+1. ***DAO*** - The basic level that synchronizes with the database.
+2. ***FACADES*** - The level that contains the buisness logic of the system.
+3. ***COUPON SYSTEM*** - The main object through which you may connect to the system. 
 
 #### COUPLUX 
   
