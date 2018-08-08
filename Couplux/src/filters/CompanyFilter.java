@@ -70,6 +70,7 @@ public class CompanyFilter implements Filter {
 			System.out.println("Request did not go through Company Filter");
 			System.out.println("Company Filter: Redirecting...");
 			//-------------
+			// if not a Company => redirect to a Service which returns an errorResponse accordingly:
 			/*
 			This was made as a part of a temporary fix for a course project.
 			the correct thing to do would have been to use a Jersey Filter and this problem would have not existed.
