@@ -11,17 +11,16 @@ A school project based off of pre-made instructions of John Bryce College.
 
 #### COUPON SYSTEM
 
-##### 3 main users :  ADMIN, COMPANY, CUSTOMER.
+##### 3 User Types :  ADMIN, COMPANY, CUSTOMER.
 	A. ADMIN : Can add, update, delete and see all the info of companies and customers.
 	B. COMPANY : Can add, delete, update and see the info of all of its coupons.
 	C. CUSTOMER : Can purchase and see all coupons.
     
- *Works with Apache Derby Database.*
-
 ##### 3 Main Levels:
 	1. DAO -		The basic level that synchronizes with the database.
 	2. FACADES -		The level that contains the buisness logic of the system.
 	3. COUPON SYSTEM -	The main object through which you may connect to the system. 
+ *Works with Apache Derby Database.*
 
 #### COUPLUX 
   
