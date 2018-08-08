@@ -70,7 +70,7 @@ public class LoginService {
 	}
 
 	/**
-	 * A login message for an Admin.
+	 * A login method for an Admin. returns a message object.
 	 * 
 	 * @param name
 	 * @param password
@@ -98,7 +98,7 @@ public class LoginService {
 	}
 
 	/**
-	 * A login message for a Company.
+	 * A login method for an Company. returns a message object.
 	 * 
 	 * @param name
 	 * @param password
@@ -126,7 +126,7 @@ public class LoginService {
 	}
 
 	/**
-	 * A login message for a Customer.
+	 * A login method for an Customer. returns a message object.
 	 * 
 	 * @param name
 	 * @param password
