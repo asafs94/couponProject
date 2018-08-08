@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>RestJersey</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>services,exceptions</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jersey.config.server.provider.classnames</param-name>
+			<param-value>org.glassfish.jersey.filter.LoggingFilter;  
+     org.glassfish.jersey.media.multipart.MultiPartFeature</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/Services/*</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>filters.LoginSessionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/Private/*</url-pattern>
+		<url-pattern>/Services/Private/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>AdminFilter</filter-name>
+		<filter-class>filters.AdminFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AdminFilter</filter-name>
+		<url-pattern>/Services/Private/Admin/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>CompanyFilter</filter-name>
+		<filter-class>filters.CompanyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CompanyFilter</filter-name>
+		<url-pattern>/Services/Private/Company/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>CustomerFilter</filter-name>
+		<filter-class>filters.CustomerFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CustomerFilter</filter-name>
+		<url-pattern>/Services/Private/Customer/*</url-pattern>
+	</filter-mapping>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/</location>
+	</error-page>
+
+</web-app>
