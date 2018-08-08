@@ -1,7 +1,5 @@
 # couponProject
-coupon project
-
-Coupon System Project:
+## Coupon System Project:
 A school project based off of pre-made instructions of John Bryce College.
 #### Made out of two layers:
 1. ***Coupon System*** - the infrastracture on top of which the Web App sits.
