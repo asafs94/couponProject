@@ -20,12 +20,15 @@ Made out of two layers:
 
 ##### 3 Main Levels:
 **DAO** - The basic level that synchronizes with the database.
+
 **FACADES** - The level that contains the buisness logic of the system.
+
 **COUPON SYSTEM** - The main object through which you may connect to the system. 
 
 ##### COUPLUX 
   
   The name of the coupon web app. 
   Includes a **Tomcat** server infrastracture, **Jersey Web Services**, Filters and a UI Design based on **Angular 5**.
+  
   *Based on the COUPON SYSTEM jar file.
   
