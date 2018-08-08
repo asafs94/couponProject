@@ -47,8 +47,12 @@ public class CustomerFilter implements Filter {
 	 * 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		
+		
 		HttpServletRequest req= (HttpServletRequest) request;
 		HttpServletResponse resp= (HttpServletResponse) response;
+		
+
 		
 		CouponClientFacade facade= (CouponClientFacade) req.getSession(false).getAttribute("facade");
 		
@@ -57,8 +61,12 @@ public class CustomerFilter implements Filter {
 			chain.doFilter(request, response);
 		}else {
 			System.out.println("Customer Filter: Request did not go through Customer Filter");
-			//if not a Customer => return to home page.
 			System.out.println("Customer Filter: Redirecting...");
+			//Redirecting to a Service which responds with the correct ErrorResponse joined with a Message object:
+			/*
+			This was made as a part of a temporary fix for a course project.
+			the correct thing to do would have been to use a Jersey Filter and this problem would have not existed.
+			*/
 			String url = "/Couplux/Services/FilterResponse/Forbidden";
 			resp.sendRedirect(resp.encodeRedirectURL(url));
 		}
