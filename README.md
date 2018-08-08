@@ -5,9 +5,9 @@ A school project based off of pre-made instructions of John Bryce College.
 1. ***Coupon System*** - the infrastracture on top of which the Web App sits.
 2. ***Couplux*** -  A dynamic web project.
  
- ### MAIN LAYERS:
+ ## Main Layers:
 
-#### COUPON SYSTEM
+### COUPON SYSTEM
 
 ##### 3 User Types :  ADMIN, COMPANY, CUSTOMER.
 	A. ADMIN : Can add, update, delete and see all the info of companies and customers.
@@ -20,7 +20,7 @@ A school project based off of pre-made instructions of John Bryce College.
 	3. COUPON SYSTEM -	The main object through which you may connect to the system. 
  *Works with **Apache Derby** Database.*
 
-#### COUPLUX 
+### COUPLUX 
   
   The name of the coupon web app. 
   Includes a **Tomcat** server infrastracture, **Jersey Web Services**, Filters and a UI Design based on **Angular 5**.
