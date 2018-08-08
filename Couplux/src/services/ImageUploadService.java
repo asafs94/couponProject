@@ -25,7 +25,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import exceptions.ApplicationException;
 import tools.MessageType;
 /**
- * Currently not working because of Angular compatability problems.
+ * Currently not using this class because of Angular compatability problems.
  * 
  * IGNORE THIS CLASS
  * @author asafs
