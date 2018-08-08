@@ -20,7 +20,7 @@ A school project based off of pre-made instructions of John Bryce College.
 	1. DAO -		The basic level that synchronizes with the database.
 	2. FACADES -		The level that contains the buisness logic of the system.
 	3. COUPON SYSTEM -	The main object through which you may connect to the system. 
- *Works with Apache Derby Database.*
+ *Works with **Apache Derby** Database.*
 
 #### COUPLUX 
   
