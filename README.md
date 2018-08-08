@@ -11,7 +11,7 @@ Made out of two layers:
 
 #### COUPON SYSTEM
 
-3 main users :  ADMIN, COMPANY, CUSTOMER.
+##### 3 main users :  ADMIN, COMPANY, CUSTOMER.
     A. ADMIN : Can add, update, delete and see all the info of companies and customers.
     B. COMPANY : Can add, delete, update and see the info of all of its coupons.
     C. CUSTOMER : Can purchase and see all coupons.
