@@ -57,15 +57,23 @@ public class CompanyFilter implements Filter {
 		HttpServletRequest req= (HttpServletRequest) request;
 		HttpServletResponse resp= (HttpServletResponse) response;
 		
+		// This filter can only be reached after the request has passed the loggin and session facade.
+		// Therefore, there is already a session and the logged in status of the user is verified.
+
 		CouponClientFacade facade= (CouponClientFacade) req.getSession(false).getAttribute("facade");
 		
 		if(facade instanceof CompanyFacade) {
 			System.out.println("Company Filter: Request went through Company Filter");
 			chain.doFilter(request, response);
 		}else {
+			//---Debug----
 			System.out.println("Request did not go through Company Filter");
-			//if not a Company => return to home page.
 			System.out.println("Company Filter: Redirecting...");
+			//-------------
+			/*
+			This was made as a part of a temporary fix for a course project.
+			the correct thing to do would have been to use a Jersey Filter and this problem would have not existed.
+			*/
 			String url = "/Couplux/Services/FilterResponse/Forbidden";
 			resp.sendRedirect(resp.encodeRedirectURL(url));
 		}
