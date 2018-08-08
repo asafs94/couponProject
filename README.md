@@ -22,7 +22,7 @@ DAO - The basic level that synchronizes with the database.
 FACADES - The level that contains the buisness logic of the system.
 COUPON SYSTEM - The main object through which you may connect to the system. 
 
-###### Couplux #######
+###### Couplux ######
   
   The name of the coupon web app. 
   Includes a Tomcat server infrastracture, Jersey Web Services, Filters and a UI Design based on Angular 5.
